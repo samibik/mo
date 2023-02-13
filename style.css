@@ -1,0 +1,154 @@
+:root {  
+  --dark-green: #006837;
+  --base-green: #008446;
+  --smooth-green: #00a357;
+  --light-green: #f6ffde;
+  --lighter-green: #d0d8bc;
+  --desaturaded-green: #888d7a;
+  --track-thumb-color: #dfdfdf;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: var(--dark-green);
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+
+body{
+  background-color: var(--light-green);
+  padding: 1rem;
+}
+
+#app{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  height: 100%;
+  justify-content: center;
+  margin: auto;
+  max-width: 720px;
+}
+
+.link{
+  color: var(--dark-green);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.button{
+  background-color: var(--dark-green);
+  border: none;
+  color: var(--light-green);
+  font-size: 1rem;
+  padding: .75rem 1rem;
+  transition: background .2s ease-in-out;
+}
+
+.button:disabled, .button:disabled:hover{
+  background-color: var(--desaturaded-green);
+  opacity: .35;
+}
+
+.button.full{
+  width: 100%;
+}
+
+.button:hover{
+  background-color: var(--base-green);
+}
+
+.button:active{
+  background-color: var(--smooth-green);
+}
+
+.header, .footer{
+  text-align: center;
+}
+
+.header__title{
+  font-size: 1.5rem;
+  margin: .25rem 0;
+}
+
+.header__paragraph{
+  margin: 0;
+}
+
+.main{
+  display: grid;
+  flex: 1 1 auto;
+  gap: 1rem;
+  place-content: center;
+}
+
+.panel{
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 720px){
+  .panel{
+    flex-direction: column;
+    width: 100%;
+  } 
+}
+
+.panel .file-loader{
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.controls{
+  padding-bottom: .75rem;
+  padding-top: .75rem;
+  width: 100%;
+}
+
+.controls__title{
+  font-weight: bold;
+  letter-spacing: .1ch;
+  text-transform: uppercase;
+}
+
+.controls .range + .range{
+  margin-top: .75rem;
+}
+
+.range{
+  width: 100%;
+}
+
+.range__title{
+  display: inline-block;
+  margin-bottom: .2rem;
+}
+
+.input-file{
+  align-items: center;
+  cursor: pointer;
+  display: grid;
+  gap: .75rem;
+  grid-template-columns: max-content 1fr;
+  outline: 1px solid var(--base-green);
+  width: 100%;
+}
+
+.input-file__display{
+  color: var(--desaturaded-green);
+  overflow: hidden;
+  padding-right: .75rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.footer{
+  color: var(--dark-green);
+  font-size: .85rem;
+  letter-spacing: .1ch;
+}
