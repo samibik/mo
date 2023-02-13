@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>¡Tu billete creativo!</title>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      *{
+        box-sizing: border-box;
+      }
+
+      html, body{
+        height: 100%;
+      }
+
+      body{
+        margin: 0;
+      }
+
+      canvas{
+        height: auto;
+        width: 100%;
+      }
+
+      input[type=file]{
+        display: none;
+      }
+
+      input[type=range] {
+        -webkit-appearance: none;
+        background-color: var(--lighter-green);
+        background-image: linear-gradient(var(--dark-green), var(--dark-green));
+        background-repeat: no-repeat;
+        border-radius: 24px;
+        height: 12px;
+        width: 100%;
+      }
+
+      input[type=range]::-webkit-slider-runnable-track {
+        border-radius: 12px;
+        cursor: ew-resize;
+        height: 12px;
+        width: 100%;
+      }
+
+      input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        background-color: var(--track-thumb-color);
+        border-radius: 16px;
+        cursor: ew-resize;
+        height: 24px;
+        margin-top: -6px;
+        width: 24px;
+      }
+
+      input[type=range]::-moz-range-track {
+        border-radius: 12px;
+        cursor: ew-resize;
+        height: 12px;
+        width: 100%;
+      }
+
+      input[type=range]::-moz-range-thumb {
+        background-color: var(--track-thumb-color);
+        border-radius: 16px;
+        cursor: ew-resize;
+        height: 24px;
+        width: 24px;
+      }
+
+      input[type=range]::-ms-track {
+        background-color: transparent;
+        border-color: transparent;
+        color: transparent;
+        cursor: ew-resize;
+        height: 12px;
+        width: 100%;
+      }
+
+      input[type=range]::-ms-fill-lower {
+        border-radius: 24px;
+      }
+
+      input[type=range]::-ms-fill-upper {
+        border-radius: 24px;
+      }
+
+      input[type=range]::-ms-thumb {
+        background-color: var(--track-thumb-color);
+        border-radius: 16px;
+        cursor: ew-resize;
+        height: 24px;
+        margin-top: 1px;
+        width: 24px;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <script src="/index.js" defer></script>
+
+    <div id="app">
+      <header class="header">
+        <h1 class="header__title">Billete creativo</h1>
+        <p class="header__paragraph">¡Felicidades por llegar hasta este punto!</p>
+        <p class="header__paragraph">Crea tu propio billete y compártelo en redes sociales</p>
+      </header>
+
+      <main class="main">
+        <canvas width="1200px" height="630px" id="responsive-canvas"></canvas>
+    
+        <div class="panel">
+  
+          <fieldset class="controls">
+            <legend class="controls__title">Personalizar</legend>
+            <div class="">
+    
+              <div class="range">
+                <label class="range__title" for="range-scale">Escalar foto</label>
+                <input type="range" name="range-scale" id="range-scale" min="50" max="100">
+              </div>
+              
+              <div class="range">
+                <label class="range__title" for="x-axis">Desplazar horizontalmente</label>
+                <input type="range" name="x-axis" id="x-axis" min="-100" max="100">
+              </div>
+              
+              <div class="range">
+                <label class="range__title" for="y-axis">Desplazar verticalmente</label>
+                <input type="range" name="y-axis" id="y-axis" min="-100" max="100">
+              </div>
+            </div>
+          </fieldset>
+  
+          <div class="file-loader">
+            <label for="photo" class="input-file">
+              <span class="button">
+                Cargar foto
+              </span>
+              <span id="file-selected" class="input-file__display">No hay foto cargada aún...</span>
+            </label>
+  
+            <input type="file" name="photo" accept="image/*" id="photo">
+            
+            <button class="button full" id="download-image" disabled>Descargar billete</button>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <span>
+          Sitio web creado por <a class="link" href="https://twitter.com/_ferdinandalexa">@_ferdinandalexa</a> para la Comunidad de Platzi 💚🍍🍍
+        </span>
+      </footer>
+
+    </div>
+  </body>
+</html>
